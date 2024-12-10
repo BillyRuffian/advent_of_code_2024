@@ -26,12 +26,12 @@ end
 puts 'Part 1'
 free = disk_1.filter_map.with_index { |block, idx| idx if block.nil? }
 
-# until free.empty?
-#   block_to_move = disk_1.rindex { |block| block != nil }
-#   free_block = free.shift
-#   disk_1[free_block] = disk_1[block_to_move]
-#   disk_1[block_to_move] = nil
-# end
+until free.empty?
+  block_to_move = disk_1.rindex { |block| block != nil }
+  free_block = free.shift
+  disk_1[free_block] = disk_1[block_to_move]
+  disk_1[block_to_move] = nil
+end
 
 
 pp checksum(disk_1)
